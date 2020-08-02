@@ -1,69 +1,38 @@
 {
   // Global key-bindings that are active in every game mode / scene
   "Global": {
-    "Escape": "push_scene MainMenu",
-    "Tilde": "push_input_mode console",
+    "Tilde": "debug_flag toggle ShowConsole",
     "Alt+F4": "quit",
-    "BracketLeft": "e:mag -1",
-    "BracketRight": "e:mag 1",
+    "Alt+Enter":  "e:toggle_fullscreen",
     "V": "push_mouse_mode DebugPick",
     "Shift+V": "hide_debug_window",
-    "F5": "start_clock",
-    "F6": "stop_clock",
     "F10": "update 1",
+    "F11": "start_clock",
+    "F12": "stop_clock",
     "Control+A": "!loadnextmap",
     "Control+X": "!loadprevmap",
-    "Pause": "e:run_renderdoc",
-    "Control+R": "e:run_renderdoc",
-    "Alt+Enter":  "e:toggle",
+    "Control+D": "engine_flag toggle RenderDepth",
     "Control+B": "engine_flag toggle ShowBoundingBoxes",
+    "Control+R": "e:run_renderdoc",
+    "Pause": "e:run_renderdoc",
 
-    "Shift+BracketLeft": "toggle_underlay",
-    "Shift+BracketRight": "toggle_overlay",
-
-    "W": "+camera_move  0 -4",
-    "A": "+camera_move -4  0",
-    "S": "+camera_move  0  4",
-    "D": "+camera_move  4  0",
-
-    "Shift+W": "+camera_move  0 -8",
-    "Shift+A": "+camera_move -8  0",
-    "Shift+S": "+camera_move  0  8",
-    "Shift+D": "+camera_move  8  0",
     "Alt+1": "set_language English",
     "Alt+2": "set_language German",
-
-    "Number0": "special -5",
-    "Number1": "special -4",
-    "Number2": "special -3",
-    "Number3": "special -2",
-    "Number4": "special -1",
-    "Number5": "special 0",
-    "Number6": "special 1",
-    "Number7": "special 2",
-    "Number8": "special 3",
-    "Number9": "special 4",
-    "Shift+Number0": "special2 -5",
-    "Shift+Number1": "special2 -4",
-    "Shift+Number2": "special2 -3",
-    "Shift+Number3": "special2 -2",
-    "Shift+Number4": "special2 -1",
-    "Shift+Number5": "special2 0",
-    "Shift+Number6": "special2 1",
-    "Shift+Number7": "special2 2",
-    "Shift+Number8": "special2 3",
-    "Shift+Number9": "special2 4"
-  },
-  "Console": {
-    "Tilde": "pop_input_mode"
+    "Alt+3": "set_language French",
+    "Alt+F2":  "load_map_prompt" 
   },
   "World2D": {
+    "Escape": "push_scene MainMenu",
+    "BracketLeft": "e:mag -1",
+    "BracketRight": "e:mag 1",
+    "Shift+BracketLeft": "toggle_underlay",
+    "Shift+BracketRight": "toggle_overlay",
+    "C": "noclip",
+
     "W": "+camera_move  0 -8",
     "A": "+camera_move -8  0",
     "S": "+camera_move  0  8",
     "D": "+camera_move  8  0",
-
-    "C": "noclip",
 
     "Shift+W": "+camera_move  0 -16",
     "Shift+A": "+camera_move -16  0",
@@ -75,7 +44,13 @@
     "Left": "+party_move -1  0",
     "Right": "+party_move  1  0",
 
-    "Tab": "push_scene inventory",
+    "Tab": "inv:open Tom",
+    "F1": "inv:open_pos 0",
+    "F2": "inv:open_pos 1",
+    "F3": "inv:open_pos 2",
+    "F4": "inv:open_pos 3",
+    "F5": "inv:open_pos 4",
+    "F6": "inv:open_pos 5",
 
     "Control+Number1": "set_active_member 0",
     "Control+Number2": "set_active_member 1",
@@ -85,10 +60,14 @@
     "Control+Number6": "set_active_member 5",
 
     "Q": "cursor_mode look",
-    "E": "cursor_mode manipulate"
+    "E": "cursor_mode manipulate",
+    "R": "cursor_mode talk",
+    "Z": "cursor_mode take"
   },
   "World3D": {
+    "Escape": "push_scene MainMenu",
     "Tab": "push_scene inventory",
+    "Control+Q": "engine_flag toggle UseCylindricalBillboards",
 
     "Control+Number1": "set_active_member 0",
     "Control+Number2": "set_active_member 1",
@@ -100,13 +79,23 @@
     "M": "open_map",
     "T": "wait",
     "Control+Shift+M": "set_mouse_mode MouseLook",
-    "Control+Shift+N": "set_mouse_mode Normal"
+    "Control+Shift+N": "set_mouse_mode Normal",
+
+    "W": "+camera_move  0 -4",
+    "A": "+camera_move -4  0",
+    "S": "+camera_move  0  4",
+    "D": "+camera_move  4  0",
+
+    "Shift+W": "+camera_move  0 -8",
+    "Shift+A": "+camera_move -8  0",
+    "Shift+S": "+camera_move  0  8",
+    "Shift+D": "+camera_move  8  0"
   },
   "Inventory": {
     "Control+A": "inv_take_all",
     "Escape": "button_press Inventory.Exit"
   },
-  "Dialog": {
+  "Conversation": {
     "Number1": "respond 1",
     "Number2": "respond 2",
     "Number3": "respond 3",
@@ -114,7 +103,8 @@
     "Number5": "respond 5",
     "Number6": "respond 6",
     "Number7": "respond 7",
-    "Escape": "close_dialog"
+    "Space": "dismiss_message",
+    "Period": "dismiss_message" 
   },
   "MainMenu": {
     "Control+N": "new_game 300 32 75",

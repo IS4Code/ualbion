@@ -1,17 +1,17 @@
 /albion_sr/
-/albion/
+/ALBION/
 /data/*.XLD/
 /data/Saves/
 /data/ShaderCache/
 /data/exported/
+/data/mods/
+/data/settings.json
 /re/
-/AdlMidi.NET/
-/SerdesNet/
-/veldrid-spirv/
-/veldrid/
+/deps/
 
 .vs/
 .vscode/
+/BenchmarkDotNet.Artifacts
 Debug/
 bin/
 obj/
@@ -22,6 +22,8 @@ packages/
 *.lock
 *.lock~
 *.user
+*.DotSettings
+launchSettings.json
 
 SDL2.dll
 imgui.ini

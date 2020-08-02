@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Formats\UAlbion.Formats.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="!Exists('..\..\..\deps\SerdesNet')">
+    <PackageReference Include="SerdesNet" Version="1.1.2" />
+  </ItemGroup>
+  <ItemGroup Condition="Exists('..\..\..\deps\SerdesNet')">
+    <ProjectReference Include="..\..\..\deps\SerdesNet\SerdesNet.csproj">
+      <Project>{88B45D1E-E323-4B3C-B6AF-7EFFB7AEA496}</Project>
+      <Name>SerdesNet</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
